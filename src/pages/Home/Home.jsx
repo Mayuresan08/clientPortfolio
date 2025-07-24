@@ -4,6 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import heroImage from '../../assets/profile.png'
 import blog1 from "../../assets/blog_1.png"
 import blog2 from "../../assets/blog_2.png"
+import blog3 from "../../assets/blog_3.png"
 import pepper from "../../assets/pepper.png"
 import bos from "../../assets/bos.png"
 import bhive from "../../assets/bhive.png"
@@ -17,6 +18,27 @@ import Marquee from 'react-fast-marquee';
 import { FaVideo, FaHashtag, FaPenNib, FaRobot, FaPalette, FaRegObjectUngroup } from 'react-icons/fa';
 import { FaYoutube, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import resumePDF from '../../assets/Natalia_Resume.pdf';
+
+// Certification Images
+import cert1 from '../../assets/certifications/prod.png';
+import cert2 from '../../assets/certifications/Lead gen.png';
+import cert3 from '../../assets/certifications/gen_ai.png';
+import cert4 from '../../assets/certifications/fig.png';
+import cert5 from '../../assets/certifications/digi.png';
+import cert6 from '../../assets/certifications/prompt.png';
+import cert7 from '../../assets/certifications/soci.png';
+import cert8 from '../../assets/certifications/tech.png';
+
+const certifications = [
+  { image: cert1, url: 'https://www.linkedin.com/learning/certificates/c31e676842c91c99d143e9cd40f6719f4b3d17a234401721570f71719af1a3d3' },
+  { image: cert2, url: 'https://www.linkedin.com/learning/certificates/c712c9fa002c5db515507a234f540a097daf8a0586a1ef6e4733009e5f958926' },
+  { image: cert3, url: '#' },
+  { image: cert4, url: 'https://www.udemy.com/certificate/UC-f0e8a09c-23b7-4c36-8d52-4f29cf113e92/' },
+  { image: cert5, url: 'https://www.linkedin.com/learning/certificates/e954bd826d896fc736775236996898d57403c64c904eac723e2e1745c5f6b582' },
+  { image: cert6, url: '#' },
+  { image: cert7, url: 'https://www.linkedin.com/learning/certificates/f1cf10326596af1c2c558ab25390d3f2d79b7a892207674addef080472782036' },
+  { image: cert8, url: 'https://www.linkedin.com/learning/certificates/161a42156d4fdccd470e22cc9ac4a6f1aa7ed2e0c3d780baa9103bc339f48ee5' },
+];
 const logos = [
     pepper,
    bos,
@@ -268,6 +290,7 @@ React.useEffect(() => {
           </div>
         </div>
       </section>
+    
       <section className="featured-projects-section" id="featured-projects-section">
         <h2 className="featured-projects-title">Featured Projects</h2>
         <div className="featured-projects-subsection">
@@ -304,6 +327,8 @@ React.useEffect(() => {
           </div>
         </div>
       </section>
+      
+     
       <section className="recent-blog-section" id="recent-blog-section">
         <h2 className="recent-blog-title">Recent Blog</h2>
         <div className="recent-blog-cards">
@@ -314,11 +339,18 @@ React.useEffect(() => {
               title: 'GEO vs SEO: How to Stay Visible in the Age of AI Search.',
               url: 'https://www.linkedin.com/pulse/geo-vs-seo-how-stay-visible-age-ai-search-natalia-shiny-cl8kc/?trackingId=ukeliJGiTwGKauR65WnJSw%3D%3D',
             },
+           
             {
               image: blog2,
               date: 'April 10, 2025',
               title: 'I Quit My 9-5 for Freelancing... Here’s What No One Warned Me About!',
               url: 'https://www.linkedin.com/posts/nataliashiny_freelancers-contracts-activity-7300145124938850304-lnS6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABWFLC4BzmuyCG1wycocIQwvarqWBDELxvE',
+            },
+            {
+              image: blog3,
+              date: 'July 22, 2025',
+              title: 'Invisible to AI? Here"s Why Your Content Isn"t Getting Picked Up',
+              url: 'https://www.linkedin.com/pulse/invisible-ai-heres-why-your-content-isnt-getting-picked-natalia-shiny-m2zmc/?trackingId=9uUFs32GQX6e5JpssVCOWw%3D%3D',
             },
             // {
             //   image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
@@ -328,6 +360,14 @@ React.useEffect(() => {
             // },
           ].map((blog, idx) => (
             <BlogCard key={blog.title} {...blog} />
+          ))}
+        </div>
+      </section>
+      <section className="certifications-section" id="certifications-section">
+        <h2 className="certifications-title">Certifications</h2>
+        <div className="certifications-cards">
+          {certifications.map((cert, index) => (
+            <CertificationCard key={index} image={cert.image} url={cert.url} />
           ))}
         </div>
       </section>
@@ -381,6 +421,14 @@ function BlogCard({ image, date, title, url }) {
       </div>
       <div className="blog-card-date">{date}</div>
       <div className="blog-card-title">{title}</div>
+    </div>
+  );
+}
+
+function CertificationCard({ image, url }) {
+  return (
+    <div  data-aos="flip-left" className="certification-card" onClick={() => window.open(url, '_blank')}>
+      <img src={image} alt="Certification" className="certification-card-img" />
     </div>
   );
 }
