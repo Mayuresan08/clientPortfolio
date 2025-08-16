@@ -32,10 +32,10 @@ import cert8 from '../../assets/certifications/tech.png';
 const certifications = [
   { image: cert1, url: 'https://www.linkedin.com/learning/certificates/c31e676842c91c99d143e9cd40f6719f4b3d17a234401721570f71719af1a3d3' },
   { image: cert2, url: 'https://www.linkedin.com/learning/certificates/c712c9fa002c5db515507a234f540a097daf8a0586a1ef6e4733009e5f958926' },
-  { image: cert3, url: '#' },
+  // { image: cert3, url: '#' },
   { image: cert4, url: 'https://www.udemy.com/certificate/UC-f0e8a09c-23b7-4c36-8d52-4f29cf113e92/' },
   { image: cert5, url: 'https://www.linkedin.com/learning/certificates/e954bd826d896fc736775236996898d57403c64c904eac723e2e1745c5f6b582' },
-  { image: cert6, url: '#' },
+  // { image: cert6, url: '#' },
   { image: cert7, url: 'https://www.linkedin.com/learning/certificates/f1cf10326596af1c2c558ab25390d3f2d79b7a892207674addef080472782036' },
   { image: cert8, url: 'https://www.linkedin.com/learning/certificates/161a42156d4fdccd470e22cc9ac4a6f1aa7ed2e0c3d780baa9103bc339f48ee5' },
 ];
